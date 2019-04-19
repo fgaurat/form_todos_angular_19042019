@@ -1,0 +1,18 @@
+<form [formGroup]="todoForm" (ngSubmit)="onSubmitTodo()">
+  <label>
+    Action:
+    <input type="text" formControlName="action" pInputText>
+  </label>
+  <label>
+    dueDate:
+    <p-calendar formControlName="dueDate"></p-calendar>
+  </label>
+
+  <button pButton type="submit" label="OK" [disabled]="!todoForm.valid"></button>
+  <br>
+  {{todoForm.value | json}}
+  <br>
+  {{todoForm.status}}
+
+</form>
+
